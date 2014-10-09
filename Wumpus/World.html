@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html ng-app="wumpus"  xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="Angular/angular.js"></script>
+    <link href="Css/global.css" rel="stylesheet" />
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <title></title>
+</head>
+<body ng-controller="wumpusController">
+    <div>
+      <input type="text" ng-model="cantidad" placeholder="longuitud de tabla"> 
+        <button ng-click="crear()">crear</button>
+      <h1>Tabla de {{ cantidad }} por {{ cantidad }} !</h1>
+    </div>
+   <table id="tabla" >
+       <tr ng-repeat="fila in filas">
+           <td ng-repeat="celda in fila.columnas" class="casilla">{{fila.x}} , {{celda.y}}</td>
+       </tr>
+   </table>
+    <script src="Scripts/controllers.js"></script>
+    
+</body>
+</html>
