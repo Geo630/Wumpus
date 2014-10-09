@@ -11,10 +11,10 @@ app.controller('wumpusController', function ($scope) {
         for (var i = 0; i < $scope.cantidad; i++) {
             $scope.filas.push({
                 columnas: [],
-                x : i
+                x : i+1
             });
             for (var j = 0; j < $scope.cantidad; j++) {
-                $scope.filas[i].columnas.push({ y: j });
+                $scope.filas[i].columnas.push({ y: j+1 });
             }
             
         };
@@ -24,7 +24,10 @@ app.controller('wumpusController', function ($scope) {
         //    $scope.tabla = [];
         //};
     };
-
+    $scope.seleccionar = function (x, y) {
+        var id = "#" + x + y
+        $(id).css("background-color", "red");
+    };
    
 
 });
