@@ -5,3 +5,11 @@
     width: 60px;
     height: 60px;
 }
+
+.activa {
+    background-color: red;
+}
+
+.wumpus {
+    background-color: green;
+}

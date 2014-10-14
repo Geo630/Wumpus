@@ -22,7 +22,7 @@
     </div>
    <table id="tabla" >
        <tr ng-repeat="fila in filas">
-           <td ng-repeat="celda in fila.columnas" id="{{fila.x}}{{celda.y}}" ng-click="seleccionar(fila.x, celda.y)" class="casilla" >{{fila.x}} , {{celda.y}}</td>
+           <td ng-repeat="celda in fila.columnas" id="{{fila.x}}{{celda.y}}" ng-click="seleccionar(celda)" ng-class="{ casilla: true, activa: celda.activa, wumpus: celda.tieneWumpus }" >{{fila.x}} , {{celda.y}}</td>
        </tr>
    </table>
     <script src="Scripts/controllers.js"></script>
