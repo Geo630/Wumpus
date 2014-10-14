@@ -28,12 +28,16 @@ app.controller('wumpusController', function ($scope) {
             $scope.tabla = [];
         };
     };
-    $scope.seleccionar = function (x, y) {
-        var id = "#" + x + y
-        $(id).css("background-color", "red");
+    $scope.seleccionar = function (celda) {
 
-        seleccionado = x +","+ y;
+        for (var i = 0; i < $scope.cantidad; i++) {
+            for (var j = 0; j < $scope.cantidad; j++) {
+                $scope.filas[i].columnas[j].activa = false;
+            }
 
+        };
+
+        celda.activa = true;
     };
    
     var algo = function (seleccionado) {
@@ -47,9 +51,20 @@ app.controller('wumpusController', function ($scope) {
     };
 
     $scope.colocarWumpus = function () {
-        algo(seleccionado);
-        var id = "#" + seleccionado;
-        $(id).css("background-color", "green");
+
+        var celda = null;
+        for (var i = 0; i < $scope.cantidad; i++) {
+            for (var j = 0; j < $scope.cantidad; j++) {
+                if ($scope.filas[i].columnas[j].activa) {
+                    celda = $scope.filas[i].columnas[j];
+                }
+            }
+
+        };
+
+        if (celda != null) {
+            celda.tieneWumpus = true;
+        }
     }
    
 });
