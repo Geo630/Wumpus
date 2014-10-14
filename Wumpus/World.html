@@ -15,7 +15,10 @@
         <label>Ingrese la longuitud de la tabla</label><br />
       <input type="text" ng-model="cantidad" placeholder="longuitud de tabla"> 
         <button ng-click="crear()">crear</button>
-      <h1>Tabla de {{ cantidad }} por {{ cantidad }} !</h1>
+        <button ng-click="colocarWumpus()">Wumpus</button>
+        <button ng-click="">Tesoro</button>
+        <button ng-click="">Aventurero</button>
+        <h1>Tabla de {{ cantidad }} por {{ cantidad }} !</h1>
     </div>
    <table id="tabla" >
        <tr ng-repeat="fila in filas">
